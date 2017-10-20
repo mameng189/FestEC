@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.matt.latter.activitys.ProxyActivity;
 import com.matt.latter.delegates.LatterDelegate;
 import com.matt.latter.ec.launcher.LaunchDelegate;
+import com.matt.latter.ec.main.EcBottomDelegate;
 import com.matt.latter.ec.sign.ISignListener;
 import com.matt.latter.ec.sign.SignInDelegate;
 import com.matt.latter.ui.launcher.ILauncherListener;
@@ -50,7 +51,8 @@ public class MainActivity extends ProxyActivity implements
             switch (tag){
                 case SIGNED:
                     Toast.makeText(this,"启动结束，用户登录了",Toast.LENGTH_LONG).show();
-                    startWithPop(new MainDelegate());
+                    //startWithPop(new MainDelegate());
+                    startWithPop(new EcBottomDelegate());
                     break;
                 case NOT_SINGNED:
                     Toast.makeText(this,"启动结束，用户未登录",Toast.LENGTH_LONG).show();
