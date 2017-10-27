@@ -1,6 +1,7 @@
 package com.matt.latter.app;
 
 import android.content.Context;
+import android.os.Handler;
 
 import java.util.HashMap;
 
@@ -21,5 +22,8 @@ public final class Latter {
     }
     public static <T> T getConfigValues(Object key) {
         return Configurator.getInstance().getConfiguration(key);
+    }
+    public static Handler getHandler() {
+        return Configurator.getInstance().getConfiguration(ConfigType.HANDLER.name());
     }
 }
