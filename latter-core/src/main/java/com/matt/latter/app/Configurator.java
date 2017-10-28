@@ -1,6 +1,8 @@
 package com.matt.latter.app;
 
 
+import android.os.Handler;
+
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 
@@ -15,6 +17,7 @@ import okhttp3.Interceptor;
 
 public class Configurator {
     private static final HashMap<Object, Object> LATTER_CONFIGS = new HashMap<>();
+    private static final Handler HANDLER = new Handler();
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
     //拦截器实现模拟请求
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
@@ -23,6 +26,7 @@ public class Configurator {
     private Configurator() {
         //配置文件初始化还没有完成
         LATTER_CONFIGS.put(ConfigType.CONFIG_READY.name(), false);
+        LATTER_CONFIGS.put(ConfigType.HANDLER.name(), HANDLER);
     }
 
     //单例模式
