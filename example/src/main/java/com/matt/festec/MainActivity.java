@@ -7,6 +7,8 @@ import android.support.v7.app.ActionBar;
 import android.widget.Toast;
 
 import com.matt.latter.activitys.ProxyActivity;
+import com.matt.latter.app.Configurator;
+import com.matt.latter.app.Latter;
 import com.matt.latter.delegates.LatterDelegate;
 import com.matt.latter.ec.launcher.LaunchDelegate;
 import com.matt.latter.ec.main.EcBottomDelegate;
@@ -25,6 +27,7 @@ public class MainActivity extends ProxyActivity implements
         if (actionBar != null) {
             actionBar.hide();
         }
+        Configurator.getInstance().withActivity(this);
     }
 
     @Override

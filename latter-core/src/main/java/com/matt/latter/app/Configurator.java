@@ -1,6 +1,7 @@
 package com.matt.latter.app;
 
 
+import android.app.Activity;
 import android.os.Handler;
 
 import com.joanzapata.iconify.IconFontDescriptor;
@@ -77,6 +78,19 @@ public class Configurator {
     public final Configurator withInterceptors(ArrayList<Interceptor> interceptors) {
         INTERCEPTORS.addAll(interceptors);
         LATTER_CONFIGS.put(ConfigType.INTERCEPTOR, INTERCEPTORS);
+        return this;
+    }
+
+    public final Configurator withWeChatAppId(String appid) {
+        LATTER_CONFIGS.put(ConfigType.WE_CHAT_APP_ID, appid);
+        return this;
+    }
+    public final Configurator withWeChatAppSecret(String appSecret) {
+        LATTER_CONFIGS.put(ConfigType.WE_CHAT_APP_SECRET, appSecret);
+        return this;
+    }
+    public final Configurator withActivity(Activity activity) {
+        LATTER_CONFIGS.put(ConfigType.ACTIVITY, activity);
         return this;
     }
 
